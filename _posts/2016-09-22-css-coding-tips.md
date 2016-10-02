@@ -1,3 +1,7 @@
+---
+
+---
+
 separate of concerns:
     shape and size  //size changes doesn't affect the shape
                     //eg: if a button's font size changes, it's padding, 

@@ -21,7 +21,8 @@ permalink: js-coercion
 
 primitive: `undefined`, `string`, `number`, `boolean`, `null`, `symbol`
 
-composite( reference ): `object`, (`array`)
+composite(reference) : `object`, (`array`)
+
 
 在浏览器中用 `Object.prototype.toString` 来判断类型会给你更丰富的结果：
 
@@ -61,6 +62,11 @@ getClass.call(JSON);
 // -> "[object JSON]"
 getClass.call(Math);
 // -> "[object Math]"
+
+var links = document.querySelectorAll('a');
+
+getClass.call(links);
+// -> "[object NodeList]"
 ```
 
 有一种说法是：任何其他类型(not object)都是 _subtype of object_ 或者 _native object_。
@@ -86,3 +92,20 @@ getClass.call(Math);
 
 
 ## Strict and type-converting comparitions
+
+
+
+### Truthy and falsy values
+
+Falsy values: `false`, `null`, `undefined`, `""`, `0`, `NaN`, `document.all`.
+Truthy values: all values that is not defined as falsy.
+
+```javascript
+if(truthyOrFalsyValue) {
+
+}
+
+foo = foo || '';
+//behaves the same as
+foo = foo ? foo : '';
+```
