@@ -17,7 +17,7 @@ permalink: idp-fe
 
 而最近“前端工程师”似乎成了大家比较鄙视的职业，一方面是前端的工作似乎很好找，很多人经过几个月培训就能胜任，甚至很多其他行业的人转来赚这个
 “easy money”。而我觉得，任何开发工作都要求开发者能不断的学习，而前端被各种培训机构渲染为“三个月包会并且高薪就业”的行业（似乎其他行业也是这样？）是不对的。
-身处互联网行业的我们应该明白，要求学位迟早会成为过时的做法，高质量的教育会越来越普及（相信互联网的力量），越来越多的人会更自由的选择自己的职业。
+互联网让高质量的教育资源更加普及，获取资源和自我驱动的学习是开发者重要的品质。
 
 静态网页时代，前端没有工程的概念，开发工作主要由设计师来完成。现在的web技术已经可以实现比较复杂的交互功能，并且有跨平台和迭代迅速的特点，
 前端开发者正充满野心的"unifying the web and the app"。前端工程师主要开发的就是user interface，我们学习的技术，遵循的最佳实践都是以之为中心的。
@@ -25,8 +25,8 @@ permalink: idp-fe
 当代的网站应用有着越来越复杂的交互逻辑和数据模型，这样的开发需求就造就了近年来前端技术的一些发展趋势，比如 MV* 框架层出不穷，组件化开发成为规范，
 work flow和自动化工具也变化迅速。这些技术解决的都是开发效率的问题，也是前端“工程化”的实践。对应这样的需求，我认为一个前端开发者应具备的基本功有：
 
-1. The API: HTTP, DOM, BOM;
-2. The Language: HTML, CSS, JavaScript / Design patterns;
+1. The API: HTTP, DOM, BOM, HTML5(, WebView);
+2. The Language: HTML, CSS, JavaScript(ES6, ES.next) / Design patterns;
 3. Web Accessibility;
 4. Network / Rendering Optimization;
 5. MV* Frameworks;
