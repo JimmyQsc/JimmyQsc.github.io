@@ -36,6 +36,7 @@ service worker的生命周期是它最复杂的部分。如果你不知道它在
 * `clients.claim()`可以改变默认值，然后控制没有被控制的网页
 
 看以下的html代码
+
 ```html
 <!DOCTYPE html>
 An image will appear here in 3 seconds:
