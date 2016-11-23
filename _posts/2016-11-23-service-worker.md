@@ -1,7 +1,7 @@
 ---
 title: Service Worker的生命周期
 subtitle: 构建离线应用
-date: 2016-11-20
+date: 2016-11-23
 categories: 笔记
 author: Jimmy Q
 permalink: sw-life-cycle
@@ -36,7 +36,7 @@ service worker的生命周期是它最复杂的部分。如果你不知道它在
 * `clients.claim()`可以改变默认值，然后控制没有被控制的网页
 
 看以下的html代码
-```
+```html
 <!DOCTYPE html>
 An image will appear here in 3 seconds:
 <script>
@@ -55,7 +55,7 @@ An image will appear here in 3 seconds:
 
 下面是他的service worker
 
-```javascript { .theme-peacock }
+```javascript
 self.addEventListener('install', event => {
   console.log('V1 installing…');
 
@@ -95,7 +95,6 @@ service worker注册的默认作用域是`./`相对于它自己所在的路径�
 当你调用`.register()`方法时（第一个参数是service worker的URL），service worker会被下载。如果下载失败或者解析（parse）失败或者在首次执行时出现错误（throw error in initial execution），register返回的promise会被reject。service worker会被忽略（abandoned -> redundant）。
 
 chrome开发者工具会把错误显示在console和application tab中的service worker部分。
-![图片](http://bos.nj.bpc.baidu.com/v1/agroup/89155d1878529aef9baab557469101a6d0b0620a)
 
 ### 安装
 
@@ -117,7 +116,6 @@ service worker得到的第一个事件是`install`。当service worker开始执�
 
 这里有个上面例子的[变种](https://cdn.rawgit.com/jakearchibald/80368b84ac1ae8e229fc90b3fe826301/raw/df4cae41fa658c4ec1fa7b0d2de05f8ba6d43c94/)，它会在service worker的激活状态调用`clients.claim`方法。你_应该_第一次加载就能看到猫的图片。我说“应该”是因为这与时间有关。只有当service worker处于活动状态并且`clients.claim`在页面试图下载图片之前生效你才会看到猫的图片。
 
-![图片](http://bos.nj.bpc.baidu.com/v1/agroup/0718ab6f6ed0eb50252376b7283a77424bc3dc2e)
 
 > Note: 我看很多人把`clients.claim()`放在他们的boilerplate中，我自己很少这么做。这样做只在首次加载时有效果，由于渐进增强（遵循这个原则，开发者不会把service worker当作页面运行的依赖）的功劳，没有service worker的网页照样正常的运行。
 
@@ -144,7 +142,7 @@ service worker得到的第一个事件是`install`。当service worker开始执�
 
  下面我们更改我们的service worker的脚本，使它用马的图片来响应`fetch`
 
-```javascript { .theme-peacock }
+```javascript
 const expectedCaches = ['static-v2'];
 
 self.addEventListener('install', event => {
@@ -221,7 +219,7 @@ self.addEventListener('fetch', event => {
 
 你在何时调用`skipWaiting()`其实不重要，只要在等待阶段中或者在等待前。在安装阶段调用是通常的做法：
 
-```javascript { .theme-peacock }
+```javascript
 self.addEventListener('install', event => {
   self.skipWaiting();
 
@@ -235,7 +233,6 @@ self.addEventListener('install', event => {
 
 [这里有个例子](https://cdn.rawgit.com/jakearchibald/80368b84ac1ae8e229fc90b3fe826301/raw/ad55049bee9b11d47f1f7d19a73bf3306d156f43/index-v3.html)使用了`skipWaiting()`。代开后你应该会看到一幅牛的图片。就像`clients.claim()` 这种情况也与时间相关，因此你只有在新的worker安装并激活开始介入fetch等发生在页面加载图片之前才能看到牛的图片。
 
-![图片](http://bos.nj.bpc.baidu.com/v1/agroup/a555ecf5b38b06ec1c6cc4caf62cdc24ac8eafe6)
 
 > 注意：skipWaiting()意味着新的worker可以控制用旧版本的worker加载的页面。这意味着有的网络请求是被旧的worker处理了，而新的worker会处理它控制页面后的请求。这种情况可能会造成破坏，请谨慎使用skipWaiting()。
 
@@ -270,8 +267,6 @@ navigator.serviceWorker.register('/sw.js').then(reg => {
 
 ### 重载时更新
 
-![图片](http://bos.nj.bpc.baidu.com/v1/agroup/8064207848cc369d8883ea78975d74183091648d)
-
 这会更改service worker的生命周期，使其变得开发友好。每次加载网页都会：
 
 1. 重新下载service worker
@@ -296,7 +291,7 @@ service worker的设计是为使它成为[可扩展web平台（extensible web）
 
 因此，为了使更多的开发模式成为可能，service worker的整个更新周期都是可见的：
 
-```javascript { .theme-peacock }
+```javascript
 navigator.serviceWorker.register('/sw.js').then(reg => {
   reg.installing; // 正在安装的 worker, 或者 undefined
   reg.waiting; // 处于等待阶段的 worker, 或者 undefined
