@@ -241,7 +241,7 @@ self.addEventListener('install', event => {
 
 我之前提到过，浏览器会在访问页面和事件后自动检查service worker的更新，但你也可以手动触发更新：
 
-```javascript { .theme-peacock }
+```javascript
 navigator.serviceWorker.register('/sw.js').then(reg => {
   // sometime later…
   reg.update();
