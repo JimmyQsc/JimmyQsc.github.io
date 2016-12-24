@@ -1,11 +1,13 @@
 ---
 title: The Depressing Songs
 subtitle: hysterical and useless
-date: 2016-12-21
+date: 2016-12-12
 categories: 笔记
 author: Jimmy Q
 permalink: depressing-songs
 ---
+
+The overwhelming possiblities in every ordinary life.
 
 ## Let Down - by Radiohead
 
