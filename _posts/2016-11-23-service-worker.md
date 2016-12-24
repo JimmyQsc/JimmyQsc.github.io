@@ -7,7 +7,7 @@ author: Jimmy Q
 permalink: sw-life-cycle
 ---
 
-> Note: 翻译自 _The Service Worker Lifecycle  - by Jake Archibald_， Jake Archibald参与了service worker标准的制定，也是该技术的推动者。下文括号里的内容是我加的，希望能方便大家理解。
+> Note: 翻译自 _The Service Worker Lifecycle  - by Jake Archibald_， Jake Archibald参与了service worker标准的制定，也是该技术的推动者。（下文括号里的内容非作者原文）
 
 service worker的生命周期是它最复杂的部分。如果你不知道它在努力做什么和这么做的优势，你会感到它在跟你对着干。但一旦你知道了它的原理，你就可以给用户提供无缝的，优雅而不突兀的更新。一种同时具备网站应用和原生应用优势的体验。
 
@@ -320,11 +320,6 @@ navigator.serviceWorker.addEventListener('controllerchange', () => {
   // 例如：一个新的service worker跳过了等待阶段变成活跃的worker
 });
 ```
-
-
-## 结语
-
-长舒一口气，终于看完了
 
 ## 总结（非作者原文）
 
