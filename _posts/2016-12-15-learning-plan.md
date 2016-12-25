@@ -1,13 +1,12 @@
 ---
 title: 学习计划
-subtitle: 学无止境
 date: 2016-12-24
 categories: 笔记
 author: Jimmy Q
 permalink: learning-plan
 ---
 
-基于web的用户界面工程，要学的太多，我得有个计划才行。
+有新的加上，完成一项check一下。
 
 ## JavaScript设计模式
 
@@ -16,8 +15,8 @@ permalink: learning-plan
 
 __material__: 
 
-    * Mastering JavaScript Design Patterns - Simon Timms
-    * Functional Light Programming - Kyle Simpson
+    -[ ] * Mastering JavaScript Design Patterns - Simon Timms
+    -[ ] * Functional Light Programming - Kyle Simpson
     * Hardcore Functional Programming in JavaScript - FM course
     * Asynchronous Programming in JavaScript - Jafar Hasin
 
