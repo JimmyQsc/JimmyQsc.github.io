@@ -17,16 +17,16 @@ __material__:
 
     -[ ] * Mastering JavaScript Design Patterns - Simon Timms
     -[ ] * Functional Light Programming - Kyle Simpson
-    * Hardcore Functional Programming in JavaScript - FM course
-    * Asynchronous Programming in JavaScript - Jafar Hasin
+    -[ ] * Hardcore Functional Programming in JavaScript - FM course
+    -[ ] * Asynchronous Programming in JavaScript - Jafar Hasin
 
 ## JavaScript语言特性
 
 __material__: 
 
-    * Effective JavaScript - David Herman
-    * The Principles of Obeject-Oriented JavaScript - Nicholas C. Zakas
-    * You Don't Know JS series - Kyle Simpson
+    -[ ] * Effective JavaScript - David Herman
+    -[ ] * The Principles of Obeject-Oriented JavaScript - Nicholas C. Zakas
+    -[ ] * You Don't Know JS series - Kyle Simpson
 
 ## 后端技术
 
@@ -38,7 +38,7 @@ __material__:
 
 __material__: 
 
-    * Udacity full stack web dev nanodegree
+    -[ ] * Udacity full stack web dev nanodegree
 
 ## 网络技术
 
@@ -47,7 +47,7 @@ __material__:
 
 __material__: 
 
-    * client server communication - course by Udacity
+    -[ ] * client server communication - course by Udacity
 
 ## 数据结构和算法
 
@@ -55,9 +55,9 @@ __material__:
 
 __material__: 
 
-    * Technical Interview - Course by Udacity
-    * Algorithms - Coursera Course by Stanford University
-    * Learning JavaScript Data Structure and Algorithms - Loiane Groner
+    -[ ] * Technical Interview - Course by Udacity
+    -[ ] * Algorithms - Coursera Course by Stanford University
+    -[ ] * Learning JavaScript Data Structure and Algorithms - Loiane Groner
 
 ## 新技术／框架
 
@@ -66,26 +66,26 @@ __material__:
 
 __material__: 
 
-    * todoMVC
-    * MDN
-    * Google Developers Blog
-    * Jake Archibald Blog
-    * FM workshops - react/angular/vue
-    * Modern JavaScript Applications - Olivier Pons
+    -[ ] * todoMVC
+    -[ ] * MDN
+    -[ ] * Google Developers Blog
+    -[ ] * Jake Archibald Blog
+    -[ ] * FM workshops - react/angular/vue
+    -[ ] * Modern JavaScript Applications - Olivier Pons
 
 ## 工具／优化技巧
 
 __material__: 
 
-    * browserify docs
-    * webpack docs
-    * gulp docs
-    * commonJS
-    * AMD docs
-    * super charged - youtube series
+    -[ ] * browserify docs
+    -[ ] * webpack docs
+    -[ ] * gulp docs
+    -[ ] * commonJS
+    -[ ] * AMD docs
+    -[ ] * super charged - youtube series
 
 ## 用户体验／无障碍
 
 __material__: 
 
-    * Web accessibility - Udacity course
+    -[ ] * Web accessibility - Udacity course
