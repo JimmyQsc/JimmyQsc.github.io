@@ -27,6 +27,8 @@ __material__:
     -[ ] * Effective JavaScript - David Herman
     -[ ] * The Principles of Obeject-Oriented JavaScript - Nicholas C. Zakas
     -[ ] * You Don't Know JS series - Kyle Simpson
+    -[ ] * Programming Languages Building a Web Browser - Course on Udacity
+
 
 ## 后端技术
 
