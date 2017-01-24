@@ -1,5 +1,5 @@
 ---
-title: 理解Object Oriented Javascript, 用最丝滑的方式(part 1)
+title: 理解Object Oriented Javascript
 subtitle: 1 Scope and closure 作用域和闭包
 date: 2016-08-14
 categories: 笔记
