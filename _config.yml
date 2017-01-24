@@ -8,12 +8,12 @@
 # Site settings
 title: Jimmy Q的博客
 email: marioqsc2013@hotmail.com
-description: 我是jimmy，我在这里记录我的学习
+description: 生活带来您时，柠檬做柠檬水
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://jimmyqsc.github.io" # the base hostname & protocol for your site
 github_username:  JimmyQsc
 bg-img: /images/header-bg.jpg
-paginate: 5
+paginate: 8
 home_message: Every Thing is Awesome
 highlighter: rouge
 
