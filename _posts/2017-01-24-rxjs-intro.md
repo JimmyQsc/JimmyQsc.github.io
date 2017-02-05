@@ -1,7 +1,7 @@
 ---
 title: RxJS 介绍
 subtitle: Clever and Neat for asynchronous
-date: 2016-01-24
+date: 2017-01-24
 categories: 笔记
 author: Jimmy Q
 permalink: rxjs-intro

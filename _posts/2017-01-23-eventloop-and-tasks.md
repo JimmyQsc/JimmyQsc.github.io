@@ -1,7 +1,7 @@
 ---
 title: 任务，微任务，队列和调度
 subtitle: 翻译，原文 Jake Archibald - Tasks, microtasks, queues and schedules
-date: 2016-01-23
+date: 2017-01-23
 categories: 笔记
 author: Jimmy Q
 permalink: t-m-q-s
