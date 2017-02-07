@@ -13,7 +13,7 @@ permalink: cache-best-practices
 
 多数缓存的最佳实践可被归类为一下两种模式：
 
-## 模式一：不可（轻易）更改的资源 + 很长的 max-age
+## 模式一：内容不变的资源 + 很长的 max-age
 
 <h5 style="background: #444; color: #ddd; font-family: monospace, monospace;">
     Cache-Control: max-age=31536000
@@ -110,7 +110,7 @@ permalink: cache-best-practices
 
 然而这种模式不适用于文章和博客。它们的URL不能设置版本它们的内容必须可变。
 
-## 模式二：可变内容，总是服务器验证。
+## 模式二：可变内容，总是服务器验证
 
 <h5 style="background: #444; color: #ddd; font-family: monospace, monospace;">
     Cache-Control: no-cache
@@ -209,3 +209,99 @@ __注意__：`no-cache` 的意思不是‘不要缓存’，而是必须与serve
 
 ## 为可变资源设置 max-age 通常是错误的
 
+……遗憾的事，这种做法很常见，比如GitHub pages。
+
+想象：
+
+* `/article/`
+* `/styles.css`
+* `/script.js`
+
+都有这样的响应头：
+
+<h5 style="background: #444; color: #ddd; font-family: monospace, monospace;">
+    Cache-Control: must-revalidate, max-age=600
+</h5>
+
+* URL对应的资源内容可变
+* 如果浏览器缓存的资源不超过10分钟，使用可以不进行网络请求
+* 否则进行网络请求，如果可以，使用`If-Modified-Since`或者`If-None-Match`
+
+<div class="chat">
+  <p class="chat-item page-chat">
+    <span class="author">网页<span>:</span></span>
+    Hey, 我需要 <span class="chat-nowrap">"/article/"</span>, <span class="chat-nowrap">"/script.js"</span> and <span class="chat-nowrap">"/styles.css"</span>
+    <span class="time">10:21</span>
+  </p>
+
+  <p class="chat-item cache-chat">
+    <span class="author">缓存<span>:</span></span>
+    我这儿没有，server？
+    <span class="time">10:21</span>
+  </p>
+
+  <p class="chat-item server-chat">
+    <span class="author">Server<span>:</span></span>
+    没问题，给你。 Btw 缓存: 这些可以用10分钟。
+    <span class="time">10:22</span>
+  </p>
+
+  <p class="chat-item cache-chat">
+    <span class="author">缓存<span>:</span></span>
+    了解!
+    <span class="time">10:22</span>
+  </p>
+
+  <p class="chat-item page-chat">
+    <span class="author">网页<span>:</span></span>
+    谢谢!
+    <span class="time">10:22</span>
+  </p>
+
+  <p class="chat-direction">6 分钟后</p>
+
+  <p class="chat-item page-chat">
+    <span class="author">网页<span>:</span></span>
+    Hey, 我需要 <span class="chat-nowrap">"/article/"</span>, <span class="chat-nowrap">"/script.js"</span> 和 <span class="chat-nowrap">"/styles.css"</span> again
+    <span class="time">10:28</span>
+  </p>
+
+  <p class="chat-item cache-chat">
+    <span class="author">缓存<span>:</span></span>
+    我的天，很抱歉，这几个被我丢了 <span class="chat-nowrap">"/styles.css"</span>, 但我有其他的几个， Server: 你给我这个吧 <span class="chat-nowrap">"/styles.css"</span>?
+    <span class="time">10:28</span>
+  </p>
+
+  <p class="chat-item server-chat">
+    <span class="author">Server<span>:</span></span>
+    好的, 这个文件的内容变了，这个文件还可以用10分钟
+    <span class="time">10:29</span>
+  </p>
+
+  <p class="chat-item cache-chat">
+    <span class="author">缓存<span>:</span></span>
+    好的。
+    <span class="time">10:29</span>
+  </p>
+
+  <p class="chat-item page-chat">
+    <span class="author">网页<span>:</span></span>
+    谢谢! 等等! 页面坏了!! 怎么回事?
+    <span class="time">10:29</span>
+  </p>
+</div>
+
+这种模式在测试时可能不会发现问题，但在真实访问场景中会出现问题，并且很难追踪问题。在上面的例子中，服务器更新了html，js和css，但页面得到的是缓存中旧的html和js，和server返回的
+更新的css。版本不匹配会破坏页面。
+
+通常我们在对html做重大改变后也会改变css来反映页面结构的变化，同时更新js。因此这些资源是相互依赖的，但缓存头信息不能反映这种关系。用户可能会得到某些文件的新版本和另一些文件的旧版本。
+
+`max-age`是相对于响应时间的，因此如果上述资源是同一次页面访问时请求的，他们的过期时间大概是相同的。但也有很小的可能用户在它们过期时间的间隙请求资源，造成资源不匹配。如果你有些页面不包括
+js，或者包括了不同的css，这些资源的过期时间就会变的不同步。更糟糕的是，某些浏览器缓存不可用的情况时有发生，而浏览器并不知道这些资源是相互依赖的。所以浏览器会无忧无虑的删除一些缓存而保留另一些
+。以上各种情况叠加在一起，不同资源版本不匹配的问题就变得很常见了。
+
+对用户来说，可能会造成布局错乱和／或功能不可用。小bug或者完全不可用都有可能。
+
+庆幸的是，用户有办法修正这种错误
+
+### 刷新网页有时会修复这个问题
