@@ -8,6 +8,7 @@ permalink: t-m-q-s
 ---
 
 > 翻译自 _[Tasks, microtasks, queues and schedules - Jake Archibald](https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/)_
+
 坐好了，这篇有很多规范。
 
 看下面的代码：

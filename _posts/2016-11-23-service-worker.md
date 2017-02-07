@@ -1,5 +1,5 @@
 ---
-title: Service Worker的生命周期
+title: Service Worker的生命周期（加我的注解）
 subtitle: 构建离线应用
 date: 2016-11-23
 categories: 笔记
@@ -342,6 +342,8 @@ navigator.serviceWorker.addEventListener('controllerchange', () => {
 网站不会被多个service worker控制，即使你使用skipWaiting()方法，这也会首先废弃旧的service worker，然后才让新的worker生效。
 
 ### 确保同时只有一个版本的网站在运行
+
+总结来说就是，浏览器检测service worker的更新，而开发者在service worker中更新页面（写入新资源的url，让浏览器缓存）。
 
 事实上，service worker的版本就是网站的版本，由于网站同时只能有一个service worker控制，因此你也只能同时运行一个版本的网站。
 
