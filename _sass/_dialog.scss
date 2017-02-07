@@ -1,9 +1,8 @@
 
 .chat {
   overflow: hidden;
-  background: #ebe4db;
+  background: #099;
   padding: 17px 17px 7px;
-  margin: 0 -20px;
   line-height: 1.3;
   display: flex;
   flex-flow: column;
@@ -12,7 +11,6 @@
 
 @media (min-width: 530px) {
   .chat {
-    margin: 0 0 0 -32px;
     padding-left: 32px;
   } 
 }
@@ -20,7 +18,7 @@
 .chat-item,
 .chat-direction {
   position: relative;
-  background: #fff;
+  background: #00bcd4;
   padding: 7px 10px;
   margin: 0 40px 10px 0;
   border-radius: 0 7px 7px 7px;
@@ -29,7 +27,7 @@
 }
 
 .page-chat {
-  background: #e1ffc7;
+  background: #ffeb3b;
   border-radius: 7px 0 7px 7px;
   margin: 0 0 10px 40px;
   align-self: flex-end;
@@ -43,13 +41,13 @@
   border: solid 5px #fff;
   border-top-width: 15px;
   border-width: 6px 4px;
-  border-color: #fff #fff transparent transparent;
+  border-color: #00bcd4 #00bcd4 transparent transparent;
 }
 
 .page-chat::before {
   top: 0;
   left: 100%;
-  border-color: #e1ffc7 transparent transparent #e1ffc7;
+  border-color: #ffeb3b transparent transparent #ffeb3b;
   width: 0;
 }
 
