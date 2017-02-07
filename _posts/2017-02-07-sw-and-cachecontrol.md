@@ -23,6 +23,78 @@ permalink: cache-best-practices
 * 浏览器／CDN可以缓存这个资源一年
 * 使用比max-age'年轻的'缓存的资源可以不必咨询服务器
 
-<div class="dialog">
+<div class="chat">
+  <p class="chat-item page-chat">
+    <span class="author">网页<span>:</span></span>
+    Hey, 我需要这几个资源： <span class="chat-nowrap">"/about/"</span> and <span class="chat-nowrap">"/sw.js"</span>
+    <span class="time">11:32</span>
+  </p>
 
+  <p class="chat-item cache-chat">
+    <span class="author">缓存<span>:</span></span>
+    我这儿没有。server 你有吗？
+    <span class="time">11:32</span>
+  </p>
+
+  <p class="chat-item server-chat">
+    <span class="author">Server<span>:</span></span>
+    我有，给你。缓存: 你可以缓存这些资源, 但用之前问我一下。
+    <span class="time">11:33</span>
+  </p>
+
+  <p class="chat-item cache-chat">
+    <span class="author">缓存<span>:</span></span>
+    好的。
+    <span class="time">11:33</span>
+  </p>
+
+  <p class="chat-item page-chat">
+    <span class="author">网页<span>:</span></span>
+    谢谢
+    <span class="time">11:33</span>
+  </p>
+
+  <p class="chat-direction">第二天</p>
+
+  <p class="chat-item page-chat">
+    <span class="author">网页<span>:</span></span>
+    Hey, 我需要这些资源： <span class="chat-nowrap">"/about/"</span> and <span class="chat-nowrap">"/sw.js"</span> again
+    <span class="time">09:46</span>
+  </p>
+
+  <p class="chat-item cache-chat">
+    <span class="author">缓存<span>:</span></span>
+    等一下。 Server: 我可以给网页这些资源嘛？ 我这儿的 <span class="chat-nowrap">"/about/"</span> 最后一次更新是星期一, <span class="chat-nowrap">"/sw.js"</span> 是昨天的。
+    <span class="time">09:46</span>
+  </p>
+
+  <p class="chat-item server-chat">
+    <span class="author">Server<span>:</span></span>
+    <span class="chat-nowrap">"/sw.js"</span> 还没有改变…
+    <span class="time">09:47</span>
+  </p>
+
+  <p class="chat-item cache-chat">
+    <span class="author">缓存<span>:</span></span>
+    Cool. 网页: 给你 <span class="chat-nowrap">"/sw.js"</span>。
+    <span class="time">09:47</span>
+  </p>
+
+  <p class="chat-item server-chat">
+    <span class="author">Server<span>:</span></span>
+    …但是 <span class="chat-nowrap">"/about/"</span> 变了, 给你新版本。 缓存: 像以前一样，缓存这些资源，但是用之前要问我一下。
+    <span class="time">09:47</span>
+  </p>
+
+  <p class="chat-item cache-chat">
+    <span class="author">缓存<span>:</span></span>
+    明白!
+    <span class="time">09:47</span>
+  </p>
+
+  <p class="chat-item page-chat">
+    <span class="author">网页<span>:</span></span>
+    Excellent!
+    <span class="time">09:47</span>
+  </p>
 </div>

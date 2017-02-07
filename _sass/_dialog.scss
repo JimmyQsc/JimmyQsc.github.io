@@ -1,4 +1,5 @@
-.dialog {
+
+.chat {
   overflow: hidden;
   background: #ebe4db;
   padding: 17px 17px 7px;
@@ -10,14 +11,14 @@
 }
 
 @media (min-width: 530px) {
-  .dialog {
+  .chat {
     margin: 0 0 0 -32px;
     padding-left: 32px;
   } 
 }
 
-.dialog-item,
-.dialog-direction {
+.chat-item,
+.chat-direction {
   position: relative;
   background: #fff;
   padding: 7px 10px;
@@ -27,14 +28,14 @@
   filter: drop-shadow(0 1px 1px rgba(0,0,0,0.2));
 }
 
-.a-dialog {
+.page-chat {
   background: #e1ffc7;
   border-radius: 7px 0 7px 7px;
   margin: 0 0 10px 40px;
   align-self: flex-end;
 }
 
-.dialog-item::before {
+.chat-item::before {
   content: '';
   position: absolute;
   top: 0;
@@ -45,14 +46,14 @@
   border-color: #fff #fff transparent transparent;
 }
 
-.a-dialog::before {
+.page-chat::before {
   top: 0;
   left: 100%;
   border-color: #e1ffc7 transparent transparent #e1ffc7;
   width: 0;
 }
 
-.dialog-item .author {
+.chat-item .author {
   display: block;
   color: #ff702c;
   font-weight: bold;
@@ -60,19 +61,19 @@
   margin: 0 0 5px 0;
 }
 
-.b-dialog .author {
+.server-chat .author {
   color: #4dbaba;
 }
 
-.a-dialog .author {
+.page-chat .author {
   color: #778868;
 }
 
-.dialog-item .author span {
+.chat-item .author span {
   color: transparent;
 }
 
-.dialog-item .time {
+.chat-item .time {
   float: right;
   font-size: 0.9rem;
   position: relative;
@@ -82,7 +83,7 @@
   margin-left: 10px;
 }
 
-.dialog-direction {
+.chat-direction {
   border-radius: 7px;
   background: #d4eaf4;
   text-transform: uppercase;
@@ -94,6 +95,6 @@
   color: #666;
 }
 
-.dialog-nowrap {
+.chat-nowrap {
   white-space: nowrap;
 }
